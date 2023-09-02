@@ -1,2 +1,2 @@
 # oop-tdd
-TDD 연습
+OOP,TDD 연습
