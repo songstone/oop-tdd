@@ -4,22 +4,16 @@ import java.util.List;
 
 public class GradeCalculator {
 
-    private final List<Course> courses;
+    private final Courses courses;
 
     public GradeCalculator(List<Course> courses) {
-        this.courses = courses;
+        this.courses = new Courses(courses);
     }
 
     public double calculateGrade() {
-        double multipliedCreditAndGrade = 0;
-        for (Course course : courses) {
-            multipliedCreditAndGrade += course.getCredit() * course.getGradeToNumber();
-        }
+        double multipliedCreditAndGradeSum = courses.multiplyCreditAndCourseGrade();
+        int totalCredit = courses.sumCreditTotal();
 
-        int totalCredit = courses.stream()
-            .mapToInt(Course::getCredit)
-            .sum();
-
-        return multipliedCreditAndGrade / totalCredit;
+        return multipliedCreditAndGradeSum / totalCredit;
     }
 }

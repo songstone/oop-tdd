@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * 평균학점 계산 방법 = (학점수×교과목 평점)의 합계/수강신청 총학점 수
- * 컬렉션 사용
+ * 1급 컬렉션 사용
  */
 public class GradeCalculatorTest {
 
